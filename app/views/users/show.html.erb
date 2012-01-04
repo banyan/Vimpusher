@@ -1,0 +1,30 @@
+<section>
+  <h2 class="avatared">
+    <%= image_tag @user.gravatar_url(size: 48) %>&nbsp;<%= @user.username %>
+  </h2>
+  <dl>
+    <dt>Member Since</dt>
+    <dd><%= @user.created_at.to_date %></dd>
+    <dt>.vimrc repo</dt>
+    <dd>
+      <% @user.vimrcs.each do |vimrc| %>
+        <%= link_to vimrc.url, vimrc.url %><br />
+      <% end %>
+    </dd>
+    <dt>Plugins</dt>
+    <dd style="font-size: 120%"><%= @plugins.size %></dd>
+  </dl>
+
+  <article>
+    <table>
+      <tr>
+        <th>plugins</th>
+      </tr>
+      <% @plugins.each do |plugin| %>
+        <tr>
+          <td><%= link_to plugin.url, plugin_path(plugin.id) %></td>
+        </tr>
+      <% end %>
+    </table>
+  </article>
+</section>

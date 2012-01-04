@@ -1,0 +1,33 @@
+<article>
+  <div style="float:left">
+    <h2>Popular plugins</h2>
+    <table>
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+
+    <% @popular.each do |group| %>
+      <tr>
+        <td><%= link_to group.url, plugin_path(group.id) %></td>
+        <td><%= group.count_plugins %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+
+  <div style="float:right">
+    <h2>Recent added plugins</h2>
+    <table>
+      <tr>
+        <th></th>
+      </tr>
+
+    <% @recent.each do |group| %>
+      <tr>
+        <td><%= link_to group.url, plugin_path(group.id) %></td>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+</article>

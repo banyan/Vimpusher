@@ -1,0 +1,140 @@
+@import "_vars";
+
+@media print {
+  body {
+    color: black;
+    background-color: inherit;
+    font-family: "Georgia", serif;
+  }
+
+  aside,
+  nav {
+    display: none;
+  }
+
+  h1 {
+    margin-top: ($font-size * 2);
+  }
+
+  h2 {
+    margin-top: ($font-size * 4);
+    letter-spacing: 0;
+  }
+
+  p {
+    a[href]::after {
+      content: " (" attr(href) ")";
+    }
+  }
+
+  hr {
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 3px double black;
+    width: 40%;
+    height: 0;
+    background-color: transparent;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  pre {
+    padding:  0;
+    border: none;
+    background-color: transparent;
+    font-family: "Courier New", monospace;
+  }
+
+  blockquote {
+    font-style: italic;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  figure,
+  .image {
+    img {
+      padding: 0;
+      border: none;
+      background-color: transparent;
+    }
+  }
+
+  a {
+    color: black;
+  }
+
+  strong,
+  ins {
+    border-color: black;
+  }
+
+  code,
+  var,
+  samp,
+  kbd {
+    font-family: "Courier New", monospace;
+  }
+
+  mark,
+  .highlight {
+    background: none;
+  }
+
+  table {
+    th {
+      border-color: black;
+      font-weight: bold;
+    }
+
+    td {
+      border-color: black;
+    }
+  }
+
+  body > header {
+    text-align: left;
+  }
+
+  h2 + footer {
+    color: black;
+
+    time {
+      color: black;
+    }
+  }
+
+  body > footer {
+    background: none;
+
+    address {
+      text-align: left;
+    }
+
+    section {
+      display: none;
+    }
+  }
+
+  .pln,
+  .pun,
+  .opn,
+  .clo,
+  .str,
+  .atv,
+  .kwd,
+  .tag,
+  .com,
+  .dec,
+  .var,
+  .typ,
+  .atn,
+  .lit,
+  .fun {
+    color: inherit;
+  }
+}

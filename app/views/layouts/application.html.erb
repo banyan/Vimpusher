@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vimpusher</title>
+    <link href="http://fonts.googleapis.com/css?family=Over+the+Rainbow" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-1469541-6']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=263926510330715";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <div id="main">
+      <header>
+        <nav>
+          <ul>
+          <% if current_user %>
+            <li><%= image_tag @gravatar_url %><%= link_to current_user.username, "/#{current_user.username}" %></li>
+            <li><%= link_to "Plugins", plugins_path %></li>
+            <li><%= link_to "Users", users_path %></li>
+            <li><%= link_to "Settings", settings_path %></li>
+            <li><%= link_to "Logout", logout_path %></li>
+          <% else %>
+            <li><%= link_to "Plugins", plugins_path %></li>
+            <li><%= link_to "Users", users_path %></li>
+            <li><%= link_to "Login", login_path %></li>
+          <% end %>
+          </ul>
+        </nav>
+        <h1>
+          <a href="/">Vimpusher</a><%= image_tag "/assets/vimpusher_girl.png" %>
+        </h1>
+      </header>
+      <%= yield %>
+    </div>
+    <footer>
+      <address>vimpusher &copy; <%= Date.today.year %></address>
+      <div class="social">
+        <span class="hatena">
+          <a href="http://b.hatena.ne.jp/entry/http://www.vimpusher.com" class="hatena-bookmark-button" data-hatena-bookmark-title="vimpusher" data-hatena-bookmark-layout="standard" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" /></a>
+          <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+        </span>
+        <span class="twitter">
+          <a href="https://twitter.com/share" class="twitter-share-button" data-via="vimpusher">Tweet</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </span>
+        <span class="facebook">
+          <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.vimpusher.com/&amp;layout=button_count&amp;show_faces=false&amp;width=120&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>

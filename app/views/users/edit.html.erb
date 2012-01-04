@@ -1,0 +1,100 @@
+<h2>Settings</h2>
+<p style="color:green"><%= flash[:notice] %></p>
+<section style="margin-bottom: 24px">
+  <nav>
+    <ul id="tab" class="tabs group">
+      <li class="present"><%= link_to "vimrc", anchor: "vimrc" %></li>
+      <li><%= link_to "gitmodules", anchor: "gitmodules" %></li>
+      <li><%= link_to "email", anchor: "email"  %></li>
+    </ul>
+  </nav>
+</section>
+
+<%= form_for @user, :url => "settings", :method => "put" do |f| %>
+
+  <div id="vimrc">
+    <p>
+      Registar your vimrc URL<br />
+      <span style="color: #aaa">e.g. https://github.com/banyan/config/blob/master/.vimrc</span>
+    </p>
+    <%= f.fields_for :vimrcs do |builder| %>
+      <%= render "vimrc_fields", :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields "Add .vimrc", f, :vimrcs %></p>
+  </div>
+
+  <div id="gitmodules">
+    <p>
+      If you are using pathogen, register your .gitmodules URL. otherwise you don't neet it.<br />
+      <span style="color: #aaa">e.g. https://github.com/banyan/config/blob/master/.gitmodules</span>
+    </p>
+    <%= f.fields_for :gitmodules do |builder| %>
+      <%= render "gitmodules_fields", :f => builder %>
+    <% end %>
+    <p><%= link_to_add_fields "Add .gitmodules", f, :gitmodules %></p>
+  </div>
+
+  <div id="email">
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email %><br />
+
+      <p>
+        <span>avatar</span>
+        <%= image_tag @gravatar_url %>
+        Change your avatar at <%= link_to "gravatar.com", "http://en.gravatar.com/" %>
+      </p>
+    </div>
+  </div>
+
+  <div class="actions"><%= f.submit "Update Settings" %></div>
+<% end %>
+
+<script type="text/javascript">
+// <![CDATA[
+
+var tab = {
+  init: function(){
+    var tabs = this.setup.tabs;
+    var pages = this.setup.pages;
+
+    for(i=0; i<pages.length; i++) {
+      if(i !== 0) pages[i].style.display = 'none';
+      tabs[i].onclick = function(){ tab.showpage(this); return false; };
+    }
+  },
+
+  showpage: function(obj){
+    var tabs = this.setup.tabs;
+    var pages = this.setup.pages;
+    var num;
+
+    for(num=0; num<tabs.length; num++) {
+      if(tabs[num] === obj) break;
+    }
+
+    for(var i=0; i<pages.length; i++) {
+      if(i == num) {
+        pages[num].style.display = 'block';
+        tabs[num].className = 'present';
+      }
+      else{
+        pages[i].style.display = 'none';
+        tabs[i].className = null;
+      }
+    }
+  }
+}
+
+tab.setup = {
+  tabs: document.getElementById('tab').getElementsByTagName('li'),
+  pages: [
+    document.getElementById('vimrc'),
+    document.getElementById('gitmodules'),
+    document.getElementById('email')
+  ]
+}
+tab.init();
+
+// ]]>
+</script>

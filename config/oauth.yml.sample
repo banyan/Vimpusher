@@ -1,0 +1,32 @@
+development:
+  twitter:
+    api_key:
+    api_secret:
+  facebook:
+    api_key:
+    api_secret:
+  github:
+    api_key:
+    api_secret:
+
+test:
+  twitter:
+    api_key:
+    api_secret:
+  facebook:
+    api_key:
+    api_secret:
+  github:
+    api_key:
+    api_secret:
+
+production:
+  twitter:
+    api_key:
+    api_secret:
+  facebook:
+    api_key:
+    api_secret:
+  github:
+    api_key:
+    api_secret:

@@ -1,0 +1,3 @@
+MAILTO="ameutau@gmail.com"
+PATH=/usr/local/rvm/gems/ruby-1.9.2-p136@dotcloud/bin:/usr/local/rvm/gems/ruby-1.9.2-p136@global/bin:/usr/local/rvm/rubies/ruby-1.9.2-p136/bin:/usr/local/rvm/bin:/usr/local/bin:/usr/local/sbin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/lib/jvm/java-6-sun/bin
+0 1 * * * /bin/bash -l -c "cd ~/current/ && rails r 'User.all.each {|user| Resque.enqueue(Crawler, user.id); sleep 1 }'"

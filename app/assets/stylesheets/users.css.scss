@@ -1,0 +1,8 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tabs { list-style: none; }
+.tabs li { display: inline; background: #eee; width: 120px; -moz-border-radius-bottomright: 50px; border-bottom-right-radius: 50px;}
+.tabs li:hover { background: #ccc; }
+.tabs li a { color: black; float: left; display: block; padding: 4px 10px; margin-left: -1px; position: relative; left: 1px; text-decoration: none;}

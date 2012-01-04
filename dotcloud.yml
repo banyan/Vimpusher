@@ -1,0 +1,8 @@
+www:
+  type: ruby
+db:
+  type: mysql
+redis:
+  type: redis
+resqueworker:
+  type: ruby-worker

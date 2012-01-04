@@ -1,0 +1,153 @@
+@import "_vars";
+
+// Header
+body > div#main > header {
+  margin: 0 auto;
+  padding: 0 $font-size / 2;
+  max-width: $cwidth;
+  line-height: 1;
+
+  mark {
+    color: $fg;
+    background-color: transparent;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  nav {
+    float: right;
+    background: none;
+  }
+
+  h1 {
+    margin-top: 24px;
+    a {
+      vertical-align: 40%;
+      margin-right: 14px;
+    }
+  }
+}
+
+body > div#main {
+  min-height: 400px;
+}
+
+nav {
+  // font-size: 87.5%;
+  font-size: 87.5%;
+  ul {
+    padding-left: 0;
+    li {
+      margin: 0;
+      color: $link;
+      float: left;
+      width: 80px;
+      line-height: 25px;
+      a {
+        float: right;
+        display: block;
+      }
+      img {
+        border-radius: 3px;
+      }
+    }
+  }
+}
+
+// Main
+body > div {
+  margin: 0 auto;
+  padding: 0 $font-size;
+  max-width: $cwidth;
+  nav {
+    background-color: $dark;
+  }
+  .join {
+    font-size: 120%;
+    text-align: center;
+    margin: ($font-size * 0.2) auto 20 auto;
+  }
+}
+
+section,
+article {
+  h2.avatared img {
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+    padding: 2px;
+    border: 1px solid #DDD;
+  }
+  p a {
+    text-decoration: underline;
+  }
+}
+
+section.avateres {
+  width: 600px;
+  margin: ($font-size * 3) auto 0;
+  font-size: 0px;
+  line-height: 0;
+}
+
+h2 + footer {
+  margin-top: (- $font-size * 2);
+  color: lighten($fg, 40%);
+  font-family: $serif;
+  font-style: italic;
+
+  time {
+    color: $fg;
+  }
+
+  a[rel="tag"] {
+    text-decoration: none;
+  }
+}
+
+// Footer
+body > footer {
+  line-height: 1;
+  background-color: lighten($fg, 92%);
+  background-color: transparentize($fg, 0.92);
+
+  address {
+    margin: ($font-size * 6) auto 0 auto;
+    padding: ($font-size * 1.5) $font-size 0;
+    max-width: $cwidth;
+    text-align: center;
+    font-style: normal;
+
+    a {
+      font-family: $serif;
+      font-style: italic;
+    }
+  }
+
+  div.social {
+    margin: ($font-size * 0.2) auto 0 auto;
+    padding: ($font-size * 0.4) $font-size ($font-size * 3.0);
+    max-width: $cwidth;
+    text-align: center;
+
+    span.hatena {
+      padding-left: 68px;
+      margin-right: 15px;
+    }
+
+    span.twitter {
+      margin-right: -20px;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    address {
+      padding: 0 $font-size;
+      height: ($font-size * 4);
+      line-height: ($font-size * 4);
+    }
+  }
+}

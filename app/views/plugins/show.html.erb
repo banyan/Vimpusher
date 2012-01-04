@@ -1,0 +1,17 @@
+<article>
+  <h2><%= @plugin.url %></h2>
+  <dl>
+    <dt>Url</dt>
+    <dd><%= link_to complement_plugin_url(@plugin.url), complement_plugin_url(@plugin.url) %></dd>
+    <dt>The number of users</dt>
+    <dd><%= @plugin.user_plugins.size %></dd>
+  </dl>
+
+  <% @plugin.users.each do |user| %>
+    <%= link_to image_tag(user.gravatar_url), "/#{user.username}" %> &nbsp;<%= link_to user.username, "#{user.username}" %><br />
+  <% end %>
+</article>
+
+<div style="margin: 30px 0">
+  <%= link_to 'Back', plugins_path %>
+</div>

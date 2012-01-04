@@ -1,0 +1,3 @@
+#!/bin/sh
+
+crontab ~/current/crontab
