@@ -1,3 +1,11 @@
 #!/bin/sh
 
 crontab ~/current/crontab
+echo "set crontab"
+
+cd $HOME/code
+ln -s ../etc/vimpusher.www/config/database.yml config/database.yml
+ln -s ../etc/vimpusher.www/config/oauth.yml config/oauth.yml
+ln -s ../etc/vimpusher.www/config/redis.yml config/redis.yml
+ln -s ../etc/vimpusher.www/config/initializers/resque_auth.rb config/initializers/resque_auth.rb
+echo "made a symbolic link to the configuration file"
