@@ -24,6 +24,7 @@ describe Parser::PluginManager::Vimrc do
       context "vim-scripts repos" do
         it { subject.parse("      Bundle 'L9'").should          == "L9" }
         it { subject.parse("      Bundle 'FuzzyFinder'").should == "FuzzyFinder" }
+        it { subject.parse("      Bundle 'vim-scripts/FuzzyFinder'").should == "FuzzyFinder" }
       end
 
       context "vim-scripts repos on github with git protocol" do
@@ -66,6 +67,7 @@ describe Parser::PluginManager::Vimrc do
       context "vim-scripts repos" do
         it { subject.parse("      NeoBundle 'L9'").should          == "L9" }
         it { subject.parse("      NeoBundle 'FuzzyFinder'").should == "FuzzyFinder" }
+        it { subject.parse("      NeoBundle 'vim-scripts/FuzzyFinder'").should == "FuzzyFinder" }
       end
 
       context "vim-scripts repos on github with git protocol" do

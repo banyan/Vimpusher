@@ -20,8 +20,8 @@ module Parser
         elsif matches = line.match(/^\s*(Neo)?Bundle\s*["'](https?|git):\/\/(.*?)["']/)
           matches[3].sub(/\/$/, '') # remove trailing slash for svn repos
         # for ordinary vundle or neobundle url: Lokaltog/vim-easymotion
-        elsif matches = line.match(/^\s*(Neo)?Bundle\s*["'](.*?)(\.git)?["']/)
-          matches[2]
+        elsif matches = line.match(/^\s*(Neo)?Bundle\s*["'](vim-scripts\/)?(.*?)(\.git)?["']/)
+          matches[3]
         else
           nil
         end
