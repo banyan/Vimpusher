@@ -10,6 +10,9 @@ module Parser
           "tpope/vim-pathogen"
         elsif line.match(/^\s*call\s+neobundle#rc/)
           "Shougo/neobundle.vim"
+        # for github repo: git@github.com:SpringMT/unite-outline.git
+        elsif matches = line.match(/^\s*(Neo)?Bundle\s*["']git@github\.com\:(vim-scripts\/)?(.*?)(\.git)?["']/)
+          matches[3]
         # for github repo: git://github.com/vim-scripts/neocomplcache.git
         elsif matches = line.match(/^\s*(Neo)?Bundle\s*["']git:\/\/github\.com\/(vim-scripts\/)?(.*?)(\.git)?["']/)
           matches[3]

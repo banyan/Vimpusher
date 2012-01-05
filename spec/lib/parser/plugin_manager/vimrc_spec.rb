@@ -36,6 +36,11 @@ describe Parser::PluginManager::Vimrc do
         it { subject.parse("      Bundle 'git://github.com/Shougo/vimproc.git'").should == "Shougo/vimproc" }
       end
 
+      context "original repos on github with git@github.com" do
+        it { subject.parse("      Bundle 'git@github.com:SpringMT/unite-outline.git'").should == "SpringMT/unite-outline" }
+        it { subject.parse("      Bundle 'git@github.com:vim-scripts/unite-outline.git'").should == "unite-outline" }
+      end
+
       context "non github repos" do
         it { subject.parse("     Bundle 'git://git.wincent.com/command-t.git'").should == "git.wincent.com/command-t.git" }
       end
@@ -71,6 +76,11 @@ describe Parser::PluginManager::Vimrc do
       context "original repos on github with git protocol" do
         it { subject.parse("      NeoBundle 'git://github.com/Shougo/vimshell.git'").should == "Shougo/vimshell" }
         it { subject.parse("      NeoBundle 'git://github.com/Shougo/vimproc.git'").should == "Shougo/vimproc" }
+      end
+
+      context "original repos on github with git@github.com" do
+        it { subject.parse("      NeoBundle 'git@github.com:SpringMT/unite-outline.git'").should == "SpringMT/unite-outline" }
+        it { subject.parse("      NeoBundle 'git@github.com:vim-scripts/unite-outline.git'").should == "unite-outline" }
       end
 
       context "non github repos" do
