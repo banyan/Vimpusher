@@ -26,6 +26,16 @@ describe Parser::PluginManager::Vimrc do
         it { subject.parse("      Bundle 'FuzzyFinder'").should == "FuzzyFinder" }
       end
 
+      context "vim-scripts repos on github with git protocol" do
+        it { subject.parse("      Bundle 'git://github.com/vim-scripts/neocomplcache.git'").should == "neocomplcache" }
+        it { subject.parse("      Bundle 'git://github.com/vim-scripts/css3.git'").should == "css3" }
+      end
+
+      context "original repos on github with git protocol" do
+        it { subject.parse("      Bundle 'git://github.com/Shougo/vimshell.git'").should == "Shougo/vimshell" }
+        it { subject.parse("      Bundle 'git://github.com/Shougo/vimproc.git'").should == "Shougo/vimproc" }
+      end
+
       context "non github repos" do
         it { subject.parse("     Bundle 'git://git.wincent.com/command-t.git'").should == "git.wincent.com/command-t.git" }
       end
@@ -51,6 +61,16 @@ describe Parser::PluginManager::Vimrc do
       context "vim-scripts repos" do
         it { subject.parse("      NeoBundle 'L9'").should          == "L9" }
         it { subject.parse("      NeoBundle 'FuzzyFinder'").should == "FuzzyFinder" }
+      end
+
+      context "vim-scripts repos on github with git protocol" do
+        it { subject.parse("      NeoBundle 'git://github.com/vim-scripts/neocomplcache.git'").should == "neocomplcache" }
+        it { subject.parse("      NeoBundle 'git://github.com/vim-scripts/css3.git'").should == "css3" }
+      end
+
+      context "original repos on github with git protocol" do
+        it { subject.parse("      NeoBundle 'git://github.com/Shougo/vimshell.git'").should == "Shougo/vimshell" }
+        it { subject.parse("      NeoBundle 'git://github.com/Shougo/vimproc.git'").should == "Shougo/vimproc" }
       end
 
       context "non github repos" do
