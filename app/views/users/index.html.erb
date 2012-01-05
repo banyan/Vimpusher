@@ -8,7 +8,7 @@
   </dl>
   <section class="avateres">
     <% @user_for_gravatar.each do |user| %>
-      <%= link_to image_tag(user.gravatar_url(size: 50)), "/#{user.username}" %>
+      <%= link_to image_tag(user.gravatar_url(size: 50, default: current_url + "/assets/vimpushergirl_default_icon.gif")), "/#{user.username}" %>
     <% end %>
   </section>
 </article>

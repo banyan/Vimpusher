@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :gitmodules, allow_destroy: true, :reject_if => proc { |attributes| attributes['url'].blank? }
 
   include Gravtastic
-  gravtastic :secure => true, :size => 24
+  gravtastic secure: true, size: 24
 
   extend FriendlyId
   friendly_id :username
