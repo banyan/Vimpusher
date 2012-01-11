@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @vimrcs = Vimrc.all
-    @user_for_gravatar = User.order("id DESC").limit(80).map
+    @user_for_gravatar = User.order("id DESC").limit(84).map
 
     respond_to do |format|
       format.html
