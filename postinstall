@@ -1,8 +1,8 @@
 #!/bin/sh
 
-crontab ~/current/crontab
-echo "set crontab"
+hostname | grep www 1>/dev/null && crontab ~/current/crontab && echo "set crontab"
 
+# Even rubyworker must create symbolic link otherwise rails init will be failed.
 cd $HOME/code
 ln -s ~/etc/vimpusher.www/config/database.yml ~/current/config/database.yml
 ln -s ~/etc/vimpusher.www/config/oauth.yml ~/current/config/oauth.yml
