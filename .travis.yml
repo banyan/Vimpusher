@@ -4,7 +4,7 @@ before_script:
   - "cp config/oauth.yml.sample config/oauth.yml"
   - "cp config/redis.yml.sample config/redis.yml"
   - "cp config/initializers/resque_auth.rb.sample config/initializers/resque_auth.rb"
-script: "RAILS_ENV=test bundle exec rake spec"
+script: "RAILS_ENV=test bundle exec rake db:drop db:create db:migrate spec"
 rvm:
   - 1.9.2
   - 1.9.3

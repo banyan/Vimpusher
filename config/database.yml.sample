@@ -27,9 +27,10 @@ test:
   reconnect: false
   database: vimpusher_test
   pool: 5
-  username: root
+  username:
   password:
   socket: /tmp/mysql.sock
+  host: 127.0.0.1
 
 production:
   adapter: mysql2
