@@ -4,24 +4,25 @@ module Parser
       # vundle and vim-pathogen, and neobundle are special.
       # they might not be in .vimrc.
       def self.parse(line)
-        if line.match(/^\s*call\s+vundle#rc()/)
+        case line
+        when /^\s*call\s+vundle#rc()/
           "gmarik/vundle"
-        elsif line.match(/^\s*call\s+pathogen#infect()/)
+        when /^\s*call\s+pathogen#infect()/
           "tpope/vim-pathogen"
-        elsif line.match(/^\s*call\s+neobundle#rc/)
+        when /^\s*call\s+neobundle#rc/
           "Shougo/neobundle.vim"
         # for github repo: git@github.com:SpringMT/unite-outline.git
-        elsif matches = line.match(/^\s*(Neo)?Bundle\s*["']git@github\.com\:(vim-scripts\/)?(.*?)(\.git)?["']/)
-          matches[3]
+        when /^\s*(Neo)?Bundle\s*["']git@github\.com\:(vim-scripts\/)?(.*?)(\.git)?["']/
+          $3
         # for github repo: git://github.com/vim-scripts/neocomplcache.git
-        elsif matches = line.match(/^\s*(Neo)?Bundle\s*["']git:\/\/github\.com\/(vim-scripts\/)?(.*?)(\.git)?["']/)
-          matches[3]
+        when /^\s*(Neo)?Bundle\s*["']git:\/\/github\.com\/(vim-scripts\/)?(.*?)(\.git)?["']/
+          $3
         # for non github repo: git://git.wincent.com/command-t.git
-        elsif matches = line.match(/^\s*(Neo)?Bundle\s*["'](https?|git):\/\/(.*?)["']/)
-          matches[3].sub(/\/$/, '') # remove trailing slash for svn repos
+        when /^\s*(Neo)?Bundle\s*["'](https?|git):\/\/(.*?)["']/
+          $3.sub(/\/$/, '') # remove trailing slash for svn repos
         # for ordinary vundle or neobundle url: Lokaltog/vim-easymotion
-        elsif matches = line.match(/^\s*(Neo)?Bundle\s*["'](vim-scripts\/)?(.*?)(\.git)?["']/)
-          matches[3]
+        when /^\s*(Neo)?Bundle\s*["'](vim-scripts\/)?(.*?)(\.git)?["']/
+          $3
         else
           nil
         end
