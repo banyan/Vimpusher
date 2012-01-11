@@ -42,6 +42,11 @@ describe Parser::PluginManager::Vimrc do
         it { subject.parse("      Bundle 'git@github.com:vim-scripts/unite-outline.git'").should == "unite-outline" }
       end
 
+      context "original repos on github start with https://github.com..." do
+        it { subject.parse("      Bundle 'https://github.com/tyru/restart.vim.git'").should == "tyru/restart.vim" }
+        it { subject.parse("      Bundle 'https://github.com/tyru/savemap.vim.git'").should == "tyru/savemap.vim" }
+      end
+
       context "non github repos" do
         it { subject.parse("     Bundle 'git://git.wincent.com/command-t.git'").should == "git.wincent.com/command-t.git" }
       end
@@ -83,6 +88,11 @@ describe Parser::PluginManager::Vimrc do
       context "original repos on github with git@github.com" do
         it { subject.parse("      NeoBundle 'git@github.com:SpringMT/unite-outline.git'").should == "SpringMT/unite-outline" }
         it { subject.parse("      NeoBundle 'git@github.com:vim-scripts/unite-outline.git'").should == "unite-outline" }
+      end
+
+      context "original repos on github start with https://github.com..." do
+        it { subject.parse("      NeoBundle 'https://github.com/tyru/restart.vim.git'").should == "tyru/restart.vim" }
+        it { subject.parse("      NeoBundle 'https://github.com/tyru/savemap.vim.git'").should == "tyru/savemap.vim" }
       end
 
       context "non github repos" do

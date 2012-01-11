@@ -15,8 +15,8 @@ module Parser
         when /^\s*(Neo)?Bundle\s*["']git@github\.com\:(vim-scripts\/)?(.*?)(\.git)?["']/
           $3
         # for github repo: git://github.com/vim-scripts/neocomplcache.git
-        when /^\s*(Neo)?Bundle\s*["']git:\/\/github\.com\/(vim-scripts\/)?(.*?)(\.git)?["']/
-          $3
+        when /^\s*(Neo)?Bundle\s*["'](https?|git):\/\/github\.com\/(vim-scripts\/)?(.*?)(\.git)?["']/
+          $4
         # for non github repo: git://git.wincent.com/command-t.git
         when /^\s*(Neo)?Bundle\s*["'](https?|git):\/\/(.*?)["']/
           $3.sub(/\/$/, '') # remove trailing slash for svn repos
