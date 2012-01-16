@@ -7,4 +7,12 @@ class Plugin < ActiveRecord::Base
   def create_group
     self.group_id = Group.create.id
   end
+
+  def using_users
+      self.class.select("users.id, users.username, user_plugins.updated_at")
+        .joins(:users)
+        .where("plugins.id = ?", self.id)
+        .where("user_plugins.deleted_at IS NULL")
+        .order("user_plugins.updated_at DESC")
+  end
 end

@@ -30,4 +30,8 @@ module ApplicationHelper
       "http://" + url
     end
   end
+
+  def gravatar_url(user_id)
+    User.find(user_id).gravatar_url
+  end
 end

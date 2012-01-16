@@ -7,9 +7,20 @@
     <dd><%= @plugin.user_plugins.size %></dd>
   </dl>
 
-  <% @plugin.users.each do |user| %>
-    <%= link_to image_tag(user.gravatar_url), "/#{user.username}" %> &nbsp;<%= link_to user.username, "/#{user.username}" %><br />
-  <% end %>
+  <table>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <% @using_users.each do |user| %>
+    <tr>
+      <td><%= link_to image_tag(gravatar_url user.id), "/#{user.username}" %></td>
+      <td><%= link_to user.username, "/#{user.username}" %></td>
+      <td><%= user.updated_at.strftime("%Y-%m-%d") %></td>
+    <% end %>
+    </tr>
+  </table>
 </article>
 
 <div style="margin: 30px 0">

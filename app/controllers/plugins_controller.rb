@@ -10,6 +10,7 @@ class PluginsController < ApplicationController
 
   def show
     @plugin = Plugin.find(params[:id])
+    @using_users = @plugin.using_users
 
     respond_to do |format|
       format.html
