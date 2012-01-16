@@ -73,15 +73,16 @@ hr {
 }
 
 pre {
-  margin: ($font-size * 2) 0;
-  padding: ($font-size * 1.5);
+  margin: ($font-size * 1.2) 0;
+  padding: ($font-size * 1.2);
   border-radius: ($font-size * 0.25);
+  border: 1px solid #CCC;
   clear: both;
-  line-height: 1.25;
+  padding: ($font-size * 1.0);
   page-break-inside: avoid;
   color: $fg;
-  background-color: lighten($fg, 98%);
-  background-color: transparentize($fg, 0.98);
+  background-color: $pre;
+  background-color: $pre;
   font-family: $monospace;
   font-size: 87.5%;
 }

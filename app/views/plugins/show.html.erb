@@ -3,16 +3,15 @@
   <dl>
     <dt>Url</dt>
     <dd><%= link_to complement_plugin_url(@plugin.url), complement_plugin_url(@plugin.url) %></dd>
-    <dt>The number of users</dt>
+    <dt>The Number Of Users</dt>
     <dd><%= @plugin.user_plugins.size %></dd>
+    <dt>Install&nbsp;<span style="font-size: 80%; color: #777">(via plugin manager)</span></dt>
+    <dd>
+      <pre>Bundle '<%= @plugin.url %>'<br />NeoBundle '<%= @plugin.url %>'</pre>
+    </dd>
   </dl>
 
   <table>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
     <% @using_users.each do |user| %>
     <tr>
       <td><%= link_to image_tag(gravatar_url user.id), "/#{user.username}" %></td>
