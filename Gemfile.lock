@@ -51,6 +51,10 @@ GEM
     gravtastic (3.2.6)
     hashie (1.2.0)
     hike (1.2.1)
+    hirb (0.6.0)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     i18n (0.6.0)
     jquery-rails (1.0.19)
       railties (~> 3.0)
@@ -161,6 +165,7 @@ GEM
     uglifier (1.2.2)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    unicode-display_width (0.1.1)
     vegas (0.1.8)
       rack (>= 1.0.0)
 
@@ -171,6 +176,7 @@ DEPENDENCIES
   coffee-rails (~> 3.1.1)
   friendly_id (~> 4.0.0.beta14)
   gravtastic
+  hirb-unicode
   jquery-rails
   json
   mysql2
