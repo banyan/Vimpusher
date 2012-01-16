@@ -31,11 +31,17 @@ body > div#main > header {
 }
 
 body > div#main {
-  min-height: 400px;
+  height: 100%;
+  min-height: 100%;
+  margin-bottom: -$footer-height;
+  height: auto;
+  div#push {
+    padding-bottom: $footer-height;
+  }
 }
 
+
 nav {
-  // font-size: 87.5%;
   font-size: 87.5%;
   ul {
     padding-left: 0;
@@ -113,10 +119,12 @@ body > footer {
   line-height: 1;
   background-color: lighten($fg, 92%);
   background-color: transparentize($fg, 0.92);
+  font-size: $font-size * 0.7;
+  height: $footer-height;
 
   address {
-    margin: ($font-size * 6) auto 0 auto;
-    padding: ($font-size * 1.5) $font-size 0;
+    margin: ($font-size * 2.4) auto 0;
+    padding: ($font-size * 3.0) $font-size 0;
     max-width: $cwidth;
     text-align: center;
     font-style: normal;
@@ -128,8 +136,8 @@ body > footer {
   }
 
   div.social {
-    margin: ($font-size * 0.2) auto 0 auto;
-    padding: ($font-size * 0.4) $font-size ($font-size * 3.0);
+    margin: ($font-size * 1.0) auto 0 auto;
+    padding: ($font-size * 1.4) $font-size ($font-size * 2.0);
     max-width: $cwidth;
     text-align: center;
 
@@ -140,14 +148,6 @@ body > footer {
 
     span.twitter {
       margin-right: -20px;
-    }
-  }
-
-  @media screen and (min-width: 768px) {
-    address {
-      padding: 0 $font-size;
-      height: ($font-size * 4);
-      line-height: ($font-size * 4);
     }
   }
 }
