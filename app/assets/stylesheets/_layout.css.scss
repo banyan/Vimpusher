@@ -123,21 +123,17 @@ body > footer {
   height: $footer-height;
 
   address {
-    margin: ($font-size * 2.4) auto 0;
-    padding: ($font-size * 3.0) $font-size 0;
+    margin: ($font-size * 1.6) auto 0;
+    padding: ($font-size * 2.4) $font-size 0;
     max-width: $cwidth;
     text-align: center;
     font-style: normal;
-
-    a {
-      font-family: $serif;
-      font-style: italic;
-    }
+    line-height: $font-size * 1.4;
   }
 
   div.social {
-    margin: ($font-size * 1.0) auto 0 auto;
-    padding: ($font-size * 1.4) $font-size ($font-size * 2.0);
+    margin: ($font-size * 0.7) auto 0 auto;
+    padding: ($font-size * 0.7) $font-size ($font-size * 2.0);
     max-width: $cwidth;
     text-align: center;
 
