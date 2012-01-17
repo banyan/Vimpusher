@@ -4,7 +4,7 @@
     <dt>Url</dt>
     <dd><%= link_to complement_plugin_url(@plugin.url), complement_plugin_url(@plugin.url) %></dd>
     <dt>The Number Of Users</dt>
-    <dd><%= @plugin.user_plugins.size %></dd>
+    <dd><%= @using_users.size %></dd>
     <dt>Install&nbsp;<span style="font-size: 80%; color: #777">(via plugin manager)</span></dt>
     <dd>
       <pre>Bundle '<%= @plugin.url %>'<br />NeoBundle '<%= @plugin.url %>'</pre>
