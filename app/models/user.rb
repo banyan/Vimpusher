@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   validates_format_of     :username, :with => /^[a-zA-Z0-9_-]+$/
   validates_exclusion_of  :username, :in => %w(new edit)
 
+  validates_presence_of :email
+
   def self.new_with_omniauth(auth)
     new do |user|
       user.provider = auth['provider']
