@@ -19,3 +19,5 @@
 /config/oauth.yml
 /config/redis.yml
 /config/initializers/resque_auth.rb
+
+.DS_Store
