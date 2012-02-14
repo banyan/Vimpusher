@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "plugins/edit.html.erb" do
+describe "plugins/edit" do
   before(:each) do
     @plugin = assign(:plugin, stub_model(Plugin))
   end

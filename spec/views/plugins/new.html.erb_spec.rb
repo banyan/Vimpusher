@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe "plugins/new.html.erb" do
+describe "plugins/new" do
   before(:each) do
     assign(:plugin, stub_model(Plugin).as_new_record)
   end
