@@ -7,6 +7,7 @@ gem 'mysql2'
 gem 'rspec-rails'
 gem 'prefetch-rspec'
 gem 'jquery-rails'
+gem 'kaminari'
 
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
