@@ -5,10 +5,12 @@
       <tr>
         <th></th>
         <th></th>
+        <th></th>
       </tr>
 
-    <% @popular.each do |group| %>
+    <% @popular.each_with_index do |group, i| %>
       <tr>
+        <td><%= i + 1 %></td>
         <td><%= link_to group.url, plugin_path(group.id) %></td>
         <td><%= group.count_plugins %></td>
       </tr>
