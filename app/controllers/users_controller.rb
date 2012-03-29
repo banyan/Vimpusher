@@ -3,13 +3,8 @@ class UsersController < ApplicationController
   before_filter :login_required, :only => %w(edit update)
 
   def index
-    @users = User.all
+    @users  = User.order.page params[:page]
     @vimrcs = Vimrc.all
-    @user_for_gravatar = User.order("id DESC").limit(84).map
-
-    respond_to do |format|
-      format.html
-    end
   end
 
   def new

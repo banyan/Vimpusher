@@ -6,10 +6,10 @@ class Group < ActiveRecord::Base
                     .group("groups.id")
                     .where("user_plugins.deleted_at is NULL")
                     .order("count_plugins DESC")
-                    .limit(30)
+                    .limit(100)
 
   scope :recent, select("plugins.id, plugins.url")
                     .joins(:plugins)
                     .order("plugins.id DESC")
-                    .limit(30)
+                    .limit(100)
 end

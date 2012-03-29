@@ -6,6 +6,9 @@ class User < ActiveRecord::Base
   accepts_nested_attributes_for :vimrcs, allow_destroy: true, :reject_if => proc { |attributes| attributes['url'].blank? }
   accepts_nested_attributes_for :gitmodules, allow_destroy: true, :reject_if => proc { |attributes| attributes['url'].blank? }
 
+  default_scope order: 'users.created_at DESC'
+  paginates_per 30
+
   include Gravtastic
   gravtastic secure: true, size: 24
 
