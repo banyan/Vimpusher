@@ -16,28 +16,28 @@ ActiveRecord::Schema.define(:version => 20120102161757) do
   create_table "gitmodules", :force => true do |t|
     t.integer  "user_id"
     t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "groups", :force => true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "plugins", :force => true do |t|
     t.string   "url"
     t.integer  "group_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "user_plugins", :force => true do |t|
     t.integer  "user_id",    :null => false
     t.integer  "plugin_id",  :null => false
     t.datetime "deleted_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "user_plugins", ["user_id", "plugin_id"], :name => "index_user_id_x_plugin_id", :unique => true
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(:version => 20120102161757) do
     t.string   "uid",        :null => false
     t.string   "username",   :null => false
     t.string   "email",      :null => false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   add_index "users", ["username"], :name => "index_users_on_username", :unique => true
@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(:version => 20120102161757) do
   create_table "vimrcs", :force => true do |t|
     t.integer  "user_id"
     t.string   "url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

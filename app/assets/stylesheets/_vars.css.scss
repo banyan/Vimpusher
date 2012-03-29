@@ -14,7 +14,7 @@ $light:    rgb(172, 215, 230);
 $lightest: rgb(187, 219, 230);
 
 $fg: rgb(  9,   9,   9);
-$bg: #fff;
+$bg: #999;
 
 $headline: #32ABC9;
 
@@ -35,7 +35,8 @@ $netbook:  1024px;
 $desktop:  1280px;
 
 // Layout
-$cwidth: ($tablet - $font-size * 2);
+//$cwidth: ($tablet - $font-size * 2);
+$cwidth: 960px;
 $footer-height: 200px;
 
 // Data URI Image
