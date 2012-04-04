@@ -101,6 +101,24 @@ gitmodule_sample2 = <<-EOS
 EOS
 
 gitmodule_sample3 = <<-EOS
+[submodule "bundle/tabular"]
+  path = bundle/tabular
+  url = git://github.com/godlygeek/tabular.git
+[submodule "bundle/solarized"]
+  path = bundle/solarized
+  url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/rooter"]
+  path = bundle/rooter
+  url = git://github.com/airblade/vim-rooter.git
+[submodule "bundle/syntastic"]
+  path = bundle/syntastic
+  url = git://github.com/scrooloose/syntastic.git
+[submodule "bundle/vimwiki"]
+  path = bundle/vimwiki
+  url = git://github.com/vim-scripts/vimwiki.git
+EOS
+
+gitmodule_sample4 = <<-EOS
 [submodule "bin/gittools"]
     path = bin/gittools
     url = https://github.com/tyru/gittools.git
@@ -112,12 +130,13 @@ gitmodule_sample3 = <<-EOS
     url = https://github.com/robbyrussell/oh-my-zsh.git
 EOS
 
-gitmodule_sample4 = <<-EOS
+gitmodule_sample5 = <<-EOS
 aaaaaa
 bbbbb
 cccccc
 dddddd
 EOS
+
 
 describe Parser::PluginManager::Gitmodule do
   describe '#parse' do
@@ -130,14 +149,19 @@ describe Parser::PluginManager::Gitmodule do
       it { subject.parse(StringIO.new(gitmodule_sample2)).should ==
         ["tpope/vim-fugitive", "tpope/vim-haml", "sudo.vim", "endwise.vim", "thinca/vim-guicolorscheme", "yanktmp.vim", "YankRing.vim", "mru.vim", "quickrun", "Smooth-Scroll", "JavaScript-syntax", "php.vim", "tpope/vim-pathogen", "The-NERD-Commenter", "AutoComplPop", "eregex.vim", "Shougo/unite.vim", "thinca/vim-ref"]
       }
+      context "when path doesn't start .vim directory" do
+        it { subject.parse(StringIO.new(gitmodule_sample3)).should ==
+          ["godlygeek/tabular", "altercation/vim-colors-solarized", "airblade/vim-rooter", "scrooloose/syntastic", "vimwiki"]
+        }
+      end
     end
 
     context ".gitmodule consists another submodule (it is irrelevant with vim)" do
-      it { subject.parse(StringIO.new(gitmodule_sample3)).should == [] }
+      it { subject.parse(StringIO.new(gitmodule_sample4)).should == [] }
     end
 
     context "totally irrelevant with vim)" do
-      it { subject.parse(StringIO.new(gitmodule_sample4)).should == [] }
+      it { subject.parse(StringIO.new(gitmodule_sample5)).should == [] }
     end
   end
 end
