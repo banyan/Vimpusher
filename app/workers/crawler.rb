@@ -26,7 +26,7 @@ class Crawler
       end
     end
 
-    if gitmodules.blank?
+    if gitmodules.present?
       gitmodules.each do |gitmodule|
         open(gitmodule) do |file|
           matches = Parser::PluginManager::Gitmodule.parse(file)
