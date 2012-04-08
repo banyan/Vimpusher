@@ -1,4 +1,23 @@
-// Place all the styles related to the top controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "_vars";
+
+
+#top > h2 {
+  font-size: $icon-size;
+  background: url(/assets/vimpusher_girl_big.png) no-repeat 95% 0%;
+  padding:50px 10px;
+  border-bottom:1px solid #CCC;
+  font-size: 40px;
+}
+
+#top > ol {
+  font-family: $title;
+  font-size: $large-size;
+  margin-bottom: 50px;
+}
+
+#top > .button {
+ width: 300px;
+ margin: 0 auto;
+ display: block;
+}
 

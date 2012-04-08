@@ -1,15 +1,20 @@
 @import "_vars";
+@import "_clearfix";
+@import "_mixin";
 
 // Header
-body > div#main > header {
-  margin: 0 auto;
-  padding: 0 $font-size / 2;
-  max-width: $cwidth;
-  line-height: 1;
+body > header {
+  @include shadow;
+  margin: 0 auto 20px;
+  padding: 0 20px 0 20px;
+  line-height: 0;
+  background: #011623;
+  border-bottom: 5px solid #A9CF54;
 
   mark {
     color: $fg;
     background-color: transparent;
+    border: 1px solid #CCC;
   }
 
   a {
@@ -21,41 +26,34 @@ body > div#main > header {
     background: none;
   }
 
-  h1 {
-    margin-top: 0px;
-    a {
-      vertical-align: 40%;
-      margin-right: 14px;
+  .logo {
+    padding-top:20px;
+    color:$darkest;
+    font-family: $title;
+    
+    h1 {
+      margin: 0px;
+      padding:0px;
+      font-size: $icon-size;
     }
   }
 }
 
-body > div#main {
-  background: #FFF;
-  height: 100%;
-  min-height: 100%;
-  margin-bottom: -$footer-height;
-  height: auto;
-  div#push {
-    padding-bottom: $footer-height;
-  }
-}
-
-
 nav {
-  font-size: 87.5%;
   ul {
-    padding-left: 0;
+    
     li {
       margin: 0;
       color: $link;
       float: left;
       width: 80px;
+      padding: 3px;
       line-height: 25px;
+
       a {
-        float: right;
         display: block;
       }
+
       img {
         border-radius: 3px;
       }
@@ -63,19 +61,26 @@ nav {
   }
 }
 
-// Main
-body > div {
-  margin: 0 auto;
-  padding: 0 $font-size;
+body > div#main {
   max-width: $cwidth;
-  nav {
-    background-color: #fff;
+  border: 10px solid #F9F9F9;
+  padding:20px 10px 0;
+  background: #FFF;
+  height: 100%;
+  min-height: 100%;
+  margin: 0 auto;
+  margin-bottom: -$footer-height;
+  height: auto;
+  @include shadow;
+  
+  div#push {
+    padding-bottom: $footer-height;
   }
-  .join {
-    font-size: 120%;
-    text-align: center;
-    margin: ($font-size * 0.2) auto 20 auto;
-  }
+}
+
+body > #main > div {
+  margin: 0 auto;
+  padding: 0;
 }
 
 section,

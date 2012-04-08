@@ -2,11 +2,11 @@
 $sans-serif:       "Lucida Grande", "Lucida Sans Unicode", sans-serif;
 $serif:            "Palatino", "Palatino Linotype", serif;
 $monospace:        "Monaco", "Andale Mono", monospace;
-$monospace:        "Monaco", "Andale Mono", monospace;
 $over-the-rainbow: 'Over the Rainbow', Arial, serif;
+$title:            'Belleza', sans-serif;
 
 // Color
-$base:     rgb(136, 187, 204);
+$base:     #32ABC9;
 
 $darkest:  rgb( 44, 111, 133);
 $dark:     rgb(115, 143, 153);
@@ -14,7 +14,7 @@ $light:    rgb(172, 215, 230);
 $lightest: rgb(187, 219, 230);
 
 $fg: rgb(  9,   9,   9);
-$bg: #999;
+$bg: #ECECEC;
 
 $headline: #32ABC9;
 
@@ -25,6 +25,7 @@ $pre:   #F8F8F8;
 
 // Size
 $font-size:    16px;
+$large-size:   20px;
 $icon-size:    32px;
 $favicon-size: 16px;
 
@@ -35,7 +36,6 @@ $netbook:  1024px;
 $desktop:  1280px;
 
 // Layout
-//$cwidth: ($tablet - $font-size * 2);
 $cwidth: 960px;
 $footer-height: 200px;
 
@@ -44,3 +44,4 @@ $button-overlay: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIj8+Cjxz
 
 $left-arrow:  url("data:image/svg+xml;base64,PD94bWwKdmVyc2lvbj0iMS4wIgplbmNvZGluZz0iVVRGLTgiCnN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKdmlld0JveD0iMCAwIDY0IDY0Igp2ZXJzaW9uPSIxLjEiCnhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnCnRyYW5zZm9ybT0idHJhbnNsYXRlKDMyKSxyb3RhdGUoLTQ1LDMyLDMyKSI+CjxnCmZpbGw9Im5vbmUiCnN0cm9rZT0iI2ZmZiIKc3Ryb2tlLXdpZHRoPSI4Ij4KPGxpbmUKeDE9IjAiCnkxPSI0Igp4Mj0iMjQiCnkyPSI0Ii8+CjxsaW5lCngxPSI0Igp5MT0iMCIKeDI9IjQiCnkyPSIyNCIvPgo8L2c+CjwvZz4KPC9zdmc+Cg==");
 $right-arrow: url("data:image/svg+xml;base64,PD94bWwKdmVyc2lvbj0iMS4wIgplbmNvZGluZz0iVVRGLTgiCnN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKdmlld0JveD0iMCAwIDY0IDY0Igp2ZXJzaW9uPSIxLjEiCnhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnCnRyYW5zZm9ybT0idHJhbnNsYXRlKC0zMikscm90YXRlKDEzNSwzMiwzMikiPgo8ZwpmaWxsPSJub25lIgpzdHJva2U9IiNmZmYiCnN0cm9rZS13aWR0aD0iOCI+CjxsaW5lCngxPSIwIgp5MT0iNCIKeDI9IjI0Igp5Mj0iNCIvPgo8bGluZQp4MT0iNCIKeTE9IjAiCngyPSI0Igp5Mj0iMjQiLz4KPC9nPgo8L2c+Cjwvc3ZnPgo=");
+

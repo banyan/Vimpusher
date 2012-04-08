@@ -3,7 +3,8 @@
   <head>
     <title>Vimpusher "social vim plugin service</title>
     <link href="http://fonts.googleapis.com/css?family=Over+the+Rainbow" rel="stylesheet" type="text/css" />
-    <link rel="shortcut icon" href="/assets/favicon.ico" />
+    <link href='http://fonts.googleapis.com/css?family=Belleza' rel='stylesheet' type='text/css'>    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
@@ -28,27 +29,31 @@
       js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=263926510330715";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
+    
+    <header>
+      <nav>
+        <ul>
+        <% if current_user %>
+          <li><%= image_tag @gravatar_url %><%= link_to current_user.username, "/#{current_user.username}" %></li>
+          <li><%= link_to "Plugins", plugins_path %></li>
+          <li><%= link_to "Users", users_path %></li>
+          <li><%= link_to "Settings", settings_path %></li>
+          <li class="btn_round"><%= link_to "Logout", logout_path %></li>
+        <% else %>
+          <li><%= link_to "Plugins", plugins_path %></li>
+          <li><%= link_to "Users", users_path %></li>
+          <li class="btn_round"><%= link_to "Login", login_path %></li>
+        <% end %>
+        </ul>
+      </nav>
+      <div class="logo">
+        <div>social vim plugin service.</div>
+        <h1><a href="/">Vimpusher</a></h1>
+      </div>
+    </header>
+
+
     <div id="main">
-      <header>
-        <nav>
-          <ul>
-          <% if current_user %>
-            <li><%= image_tag @gravatar_url %><%= link_to current_user.username, "/#{current_user.username}" %></li>
-            <li><%= link_to "Plugins", plugins_path %></li>
-            <li><%= link_to "Users", users_path %></li>
-            <li><%= link_to "Settings", settings_path %></li>
-            <li><%= link_to "Logout", logout_path %></li>
-          <% else %>
-            <li><%= link_to "Plugins", plugins_path %></li>
-            <li><%= link_to "Users", users_path %></li>
-            <li><%= link_to "Login", login_path %></li>
-          <% end %>
-          </ul>
-        </nav>
-        <h1>
-          <a href="/">Vimpusher</a><%= image_tag "/assets/vimpusher_girl.png" %>
-        </h1>
-      </header>
       <%= yield %>
       <div id="push"></div>
     </div>
