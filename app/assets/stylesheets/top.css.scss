@@ -1,21 +1,32 @@
 @import "_vars";
 
-
-#top > h2 {
-  font-size: $icon-size;
-  background: url(/assets/vimpusher_girl_big.png) no-repeat 95% 0%;
-  padding:50px 10px;
+.top_box {
+  background: url(/assets/girl.png) no-repeat 95% 0%;
+  padding:20px 10px 0px;
   border-bottom:1px solid #CCC;
-  font-size: 40px;
+  margin-bottom: 40px;
 }
 
-#top > ol {
+#top h2 {
+  font-size: $icon-size;
+  font-size: 40px;
+  padding-left:10px;
+}
+
+#top ol {
   font-family: $title;
   font-size: $large-size;
-  margin-bottom: 50px;
+  width: 600px;
+  color: #333;
 }
 
-#top > .button {
+#top ol li {
+  line-height: 1.2;
+  margin-bottom:10px;
+}
+
+
+#top .button {
  width: 300px;
  margin: 0 auto;
  display: block;
