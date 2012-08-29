@@ -19,8 +19,6 @@ gem "friendly_id", "~> 4.0.0.beta14"
 gem 'resque', :require => 'resque/server'
 gem 'redis'
 
-gem 'ffi', "1.1.4"
-
 gem 'exception_notification', :require => 'exception_notifier'
 
 group :assets do
