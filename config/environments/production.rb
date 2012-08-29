@@ -57,4 +57,9 @@ Vimpusher::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.middleware.use ExceptionNotifier,
+    :email_prefix => "[Vimpusher Exception] ",
+    :sender_address => %{"Exception Notifier" <no-reply@vimpusher.com>},
+    :exception_recipients => %w{ameutau@gmail.com}
 end
