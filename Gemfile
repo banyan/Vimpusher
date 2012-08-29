@@ -20,7 +20,7 @@ gem "friendly_id", "~> 4.0.0.beta14"
 gem 'resque', :require => 'resque/server'
 gem 'redis'
 
-gem 'exception_notification', git: 'http://github.com/smartinez87/exception_notification'
+gem 'exception_notification', :require => 'exception_notifier'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
