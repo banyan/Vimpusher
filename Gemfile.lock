@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/smartinez87/exception_notification.git
+  remote: http://github.com/smartinez87/exception_notification
   revision: 35bd822efb192c6b49208a1773c23748720f248d
   specs:
     exception_notification (2.6.1)
