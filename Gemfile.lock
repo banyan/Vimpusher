@@ -207,7 +207,6 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   exception_notification
-  ffi (= 1.1.4)
   friendly_id (~> 4.0.0.beta14)
   gravtastic
   guard-rspec

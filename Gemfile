@@ -8,7 +8,6 @@ gem 'rspec-rails'
 gem 'prefetch-rspec'
 gem 'jquery-rails'
 gem 'kaminari'
-gem 'unicorn'
 
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
@@ -32,6 +31,7 @@ end
 
 group :development, :test do
   gem 'hirb-unicode'
+  gem 'unicorn'
 
   gem 'guard-rspec'
   gem 'guard-spork'
