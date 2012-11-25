@@ -11,6 +11,16 @@ set :use_sudo, true
 
 set :workers, { "crawler_queue" => 4 }
 
+namespace :deploy do
+  task :set_symbolic_link, :roles => :resque_worker do
+    sudo "ln -s /etc/vimpusher/config/database.yml #{release_path}/config/database.yml"
+    sudo "ln -s /etc/vimpusher/config/oauth.yml #{release_path}/config/oauth.yml"
+    sudo "ln -s /etc/vimpusher/config/redis.yml #{release_path}/config/redis.yml"
+    sudo "ln -s /etc/vimpusher/config/initializers/resque_auth.rb #{release_path}/config/initializers/resque_auth.rb"
+  end
+end
+before 'deploy:create_symlink', 'deploy:set_symbolic_link'
+
 # if you want to clean up old releases on each deploy uncomment this:
 # after "deploy:restart", "deploy:cleanup"
 
