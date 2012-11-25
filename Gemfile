@@ -8,6 +8,7 @@ gem 'rspec-rails'
 gem 'prefetch-rspec'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'unicorn'
 
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
