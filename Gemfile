@@ -30,4 +30,5 @@ group :development, :test do
   gem 'hirb-unicode'
   gem 'unicorn'
   gem 'capistrano'
+  gem 'capistrano-resque'
 end
