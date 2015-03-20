@@ -64,7 +64,7 @@ class Crawler
   # to:   https://raw.github.com/banyan/config/master/.vimrc
   def self.convert_2_rawurl(url)
     if url =~ /^https:\/\/github.com\//
-      url.sub!(/^https:\/\/github.com\//, "https://raw.github.com/").sub!(/\/blob\//, "/")
+      url.sub!(/^https:\/\/github.com\//, "https://raw.githubusercontent.com/").sub!(/\/blob\//, "/")
     end
     url
   end
